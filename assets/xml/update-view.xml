@@ -1,0 +1,15 @@
+<vbox width="100%" height="100%">
+    <style>
+        .label .button {
+            color: white; 
+            font-size: 12px;
+        }
+    </style>
+    <box width="100%" height="100%">
+        <vbox width="100%" horizontalAlign="center" verticalAlign="center">
+            <image resource="assets/images/ce_logo.png" width="65%" horizontalAlign="center" scaleMode="fitwidth"/>
+            <progress pos="4" style="spacing:10px;" id="updateBar" width="80%" horizontalAlign="center" />
+            <label text="Preparing to update..." id="updateText" horizontalAlign="center" textAlign="center"/>
+        </vbox>
+    </box>
+</vbox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <meta title="Loading" package="" version="1.0.0" company="" />
+    <app main="Main" file="cdev-crash_handler" path="build/openfl" />
+
+    <window background="#151515" fps="60" />
+    <window width="450" height="460" if="desktop" />
+
+    <!-- classpath, haxe libs -->
+    <source path="src" />
+
+    <assets path="assets/images"/>
+
+    <haxelib name="openfl" />
+    <haxelib name="actuate" />
+
+    <haxelib name="haxeui-core" />
+    <haxelib name="haxeui-openfl" />
+
+    <icon path="icon/icon8.png" size='8'/>
+	<icon path="icon/icon16.png" size='16'/>
+	<icon path="icon/icon32.png" size='32'/>
+	<icon path="icon/icon64.png" size='64'/>
+	<icon path="icon/icon128.png" size='128'/>
+	<icon path="icon/icon256.png" size='256'/>
+	<icon path="icon/icon512.png" size='512'/>
+	<icon path="icon/iconOG.png" />
+</project>
