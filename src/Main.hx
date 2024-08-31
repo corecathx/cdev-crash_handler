@@ -51,7 +51,8 @@ class Main {
                 "lol you opened the wrong file i guess",
                 "here's your thing: 127.0.0.1",
                 "hi",
-                "heheh"
+                "heheh",
+                "ooo i'm scared, *shaking*"
             ];            
             a.text = random[Std.int(Math.random()*random.length)];
             a.color = Color.fromString("white");
