@@ -38,7 +38,22 @@ class Main {
             Application.current.window.height = 48;
             var a = new Label();
             a.percentWidth = 100;
-            a.text = "Uhh, are you lost?\nIf you want to run the game, run the \"CDEV Engine.exe\" one.\nThis is CDEV Engine's Crash Handler, also used for Update handling.";
+            var random = [
+                "hi :]",
+                "wow you found me",
+                "...lol",
+                "eh",
+                "ooo... you're going to click that close button ooo...",
+                "oh.",
+                "ehhhh, what?",
+                "what do you expect to see here",
+                "hey there",
+                "lol you opened the wrong file i guess",
+                "here's your thing: 127.0.0.1",
+                "hi",
+                "heheh"
+            ];            
+            a.text = random[Std.int(Math.random()*random.length)];
             a.color = Color.fromString("white");
             app.addComponent(a);
         }
@@ -64,7 +79,6 @@ class Main {
         int darkMode = enable ? 1 : 0;
         
         HWND window = FindWindowA(NULL, title.c_str());
-        // Look for child windows if top level aint found
         if (window == NULL) window = FindWindowExA(GetActiveWindow(), NULL, NULL, title.c_str());
         
         if (window != NULL && S_OK != DwmSetWindowAttribute(window, 19, &darkMode, sizeof(darkMode))) {

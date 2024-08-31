@@ -9,7 +9,7 @@
         <vbox width="100%" horizontalAlign="center" verticalAlign="center">
             <image resource="assets/images/ce_logo.png" width="65%" horizontalAlign="center" scaleMode="fitwidth"/>
             <progress pos="4" style="spacing:10px;" id="updateBar" width="80%" horizontalAlign="center" />
-            <label text="Preparing to update..." id="updateText" horizontalAlign="center" textAlign="center"/>
+            <label text="Loading..." id="updateText" horizontalAlign="center" textAlign="center"/>
         </vbox>
     </box>
 </vbox>

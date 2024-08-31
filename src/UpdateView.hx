@@ -1,4 +1,4 @@
-package ;
+package;
 
 import haxe.ui.containers.dialogs.MessageBox.MessageBoxType;
 import sys.io.Process;
@@ -27,11 +27,19 @@ class UpdateView extends VBox {
     var done:Bool = false;
     public function new() {
         super();
-        if (!FileSystem.exists(updateFrom)){
-            Dialogs.messageBox('Couldn\'t find update files.', 'CDEV Engine', 'exit');
-        }
-        updateBar.indeterminate = true;
-        Timer.delay(executeUpdate, 3000);
+        Timer.delay(()->{
+            
+            if (!FileSystem.exists(updateFrom)){
+                updateText.text = "An error occured.";
+                Dialogs.messageBox('Couldn\'t find update files.', 'CDEV Engine', 'exit');
+            } else {
+                updateText.text = "Preparing to update...";
+                updateBar.indeterminate = true;
+                Timer.delay(executeUpdate, 3000);
+            }
+        },1000);
+
+
     }
 
     public function executeUpdate(){

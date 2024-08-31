@@ -25,13 +25,25 @@ class CrashView extends VBox {
     ];
     public function new(crashPath:String) {
         super();
+        var error:Bool = false;
+        if (crashPath == null) {
+            error = true;
+            crashPath = "[INTERNAL] No crash log file path was provided.";
+        }
         randomText.text = bunchOfTexts[Std.int(Math.random() * (bunchOfTexts.length-1))] +
         "\nCDEV Engine unexpectedly crashed during runtime.";
-        call_stacks.text = File.getContent(crashPath);
+        if (!error) {
+            if (crashPath == "!TEST-MODE") 
+                call_stacks.text = "Call stacks will be written here after test.";
+            else 
+                call_stacks.text = File.getContent(crashPath);
+        } else {
+            call_stacks.text = crashPath;
+        }
 
         github_button.onClick = (me:MouseEvent) -> {
             trace("boom");
-            Lib.getURL(new URLRequest("https://github.com/Core5570RYT/FNF-CDEV-Engine/"), "_blank");
+            Lib.getURL(new URLRequest("https://github.com/corecathx/FNF-CDEV-Engine/"), "_blank");
             Sys.exit(0);
         }
 
