@@ -7,6 +7,7 @@ import haxe.ui.components.Label;
 import lime.app.Application;
 import haxe.ui.components.Image;
 import haxe.ui.HaxeUIApp;
+#if windows
 @:buildXml('
 <target id="haxe">
   <lib name="dwmapi.lib" if="windows" />
@@ -25,6 +26,7 @@ import haxe.ui.HaxeUIApp;
 #include <shellapi.h>
 #include <cstdio>
 ')
+#end
 class Main {
     public static function main() {
         var app = new HaxeUIApp();
@@ -76,6 +78,7 @@ class Main {
         });
     }
 
+    #if windows
     @:functionCode('
         int darkMode = enable ? 1 : 0;
         
@@ -86,6 +89,7 @@ class Main {
             DwmSetWindowAttribute(window, 20, &darkMode, sizeof(darkMode));
         }
     ')
+    #end
     public static function setWindowDarkMode(title:String, enable:Bool) {}
 }
 
